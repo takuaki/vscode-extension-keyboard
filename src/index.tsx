@@ -1,8 +1,7 @@
-import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
+import { Board } from "./components/Board";
+import "./styles/_all.sass";
 
-const App = () => {
-  return <h1>hello</h1>;
-};
-
-render(<App />, document.getElementById("app"));
+const container = document.getElementById("app");
+const root = createRoot(container!);
+root.render(<Board />);

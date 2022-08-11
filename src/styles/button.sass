@@ -1,0 +1,35 @@
+@use 'sass:math'
+	
+.button
+	//button-style
+	$shadow-radius: .2em
+	$viewpoint-deg: -45deg
+	//$height: 1em
+	width: 4.0em
+	height: 4.0em
+	background: white		
+	//background-image: radial-gradient(circle at 50%, hsla(0deg,0%,95%,1),hsla(0deg,0%,96%,1) 20%, hsla(0deg, 0%,97%,1) 60%, hsla(0deg,0%,100%,1) 80%)
+	//background: hsla(0deg, 0%,95%, 1)
+	border: 1px white solid
+	border-radius: 50% 
+	box-shadow: 0 0 0 $shadow-radius hsla(0deg,0%, 90%, 1), 0 0 .25em $shadow-radius hsl(0deg,0%,95%)
+
+	//box-shadow: 1px solid black 
+	//box-shadow: 4.1px 8.2px 8.2px hsl(0deg 0% 0% / 0.37)
+	//active
+	&--pressed
+		transition: .2s backgorund box-shadow
+		background-image: radial-gradient(circle at 50%, hsla(0deg,0%,95%,1),hsla(0deg,0%,96%,1) 20%, hsla(0deg, 0%,97%,1) 60%, hsla(0deg,0%,100%,1) 80%)
+		box-shadow: 0 0 0 .2em hsl(0deg,0%,80%)
+
+	//font-style
+	&__text
+		margin: auto
+		display: block
+		font-size: 1.25rem
+		color: hsl(0deg, 0%, 30%)
+		font-family: Pilatino, sans-serif
+		font-kerning: auto
+		font-weight: 500
+		text-transform: uppercase
+

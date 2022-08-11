@@ -8,6 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
   },
+  resolve: {
+    extensions: [".ts", ".tsx",".js"],
+  },
   module: {
     rules: [
       {
