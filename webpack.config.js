@@ -9,7 +9,7 @@ module.exports = {
     filename: "main.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx",".js"],
+    extensions: [".ts", ".tsx", ".js"],
   },
   module: {
     rules: [
@@ -29,4 +29,8 @@ module.exports = {
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
 };

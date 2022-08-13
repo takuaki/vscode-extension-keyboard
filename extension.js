@@ -36,7 +36,7 @@ function getWebviewContent(context, webview) {
   );
 
   const scriptUri = webview.asWebviewUri(scriptPathOnDist);
-  vscode.window.showInformationMessage(scriptUri.toString());
+
   const nonce = getNonce();
 
   return `<!DOCTYPE html>
