@@ -3,11 +3,11 @@ const path = require("path");
 
 function activate(context) {
   let disposable = vscode.commands.registerCommand(
-    "extension-webview.typewriter",
+    "extension-webview.keyboard",
     () => {
       const panel = vscode.window.createWebviewPanel(
-        `typewriter`,
-        `Type Writer`,
+        `keyboard`,
+        `keyboard`,
         vscode.ViewColumn.One,
         { enableScripts: true }
       );

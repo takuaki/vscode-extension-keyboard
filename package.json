@@ -1,24 +1,29 @@
 {
-  "name": "typewriter",
+  "name": "keyboard",
   "version": "1.0.0",
   "private": true,
-  "publisher": "t.mori",
-  "description": "",
+  "publisher": "tmori",
+  "description": "webview keyboard",
+  "icon": "src/assets/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takuaki/vscode-extension-keyboard.git"
+  },
   "engines": {
-    "vscode": "^1.49.0"
+    "vscode": "^1.70.0"
   },
   "categories": [
-    "Other"
+    "Visualization"
   ],
   "activationEvents": [
-    "onCommand:extension-webview.typewriter"
+    "onCommand:extension-webview.keyboard"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension-webview.typewriter",
-        "title": "Type Writer"
+        "command": "extension-webview.keyboard",
+        "title": "keyboard"
       }
     ]
   },
@@ -29,8 +34,8 @@
     "build": "webpack",
     "serve": "webpack serve"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["keyboard","typewriter","vscode","extension"],
+  "author": "t.mori",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",

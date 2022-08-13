@@ -45,7 +45,7 @@ const Board = () => {
 
   return (
     <div className="board">
-      <div className="board board__line">
+      <div className="board__line">
         {keys[0].map((key) => (
           <Button
             character={key}
