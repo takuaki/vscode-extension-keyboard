@@ -11,11 +11,27 @@ function activate(context) {
         vscode.ViewColumn.One,
         { enableScripts: true }
       );
+
       panel.webview.html = getWebviewContent(context, panel.webview);
+
+      vscode.workspace.onDidChangeTextDocument((e) => {
+        const key = e.contentChanges[0].text;
+        const keys = convertKeys(key);
+        vscode.window.showInformationMessage({ keys: keys });
+      });
     }
   );
 
   context.subscriptions.push(disposable);
+}
+
+function convertKeys(key) {
+  if (key === "\r\n" || key === "\n") return ["enter"];
+  else if (key === "\t") return ["tab"];
+  else if (key === " ") return ["space"];
+  else if (/^[A-Z]{1}$/.test(key)) return ["shift", key.toLowerCase()];
+  else if (/^[a-z]{1}$/.test(key)) return [key];
+  else return [];
 }
 
 function getWebviewOptions(extensionUri) {
