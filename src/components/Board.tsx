@@ -23,11 +23,10 @@ const Board = () => {
 
   //if you want to check vscode, enable below(+unable upper code)
   const setKeyPress = (ev: MessageEvent<any>) => {
-    const data = ev.data
-    console.log(data)
-    if('keys' in data){
-      const keys = data["keys"] as string[]
-      setPressKeys(keys)
+    const data = ev.data;
+    if ("keys" in data) {
+      const keys = data["keys"] as string[];
+      setPressKeys(keys);
     }
   };
 
