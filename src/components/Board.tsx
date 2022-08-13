@@ -3,7 +3,9 @@ import { Button } from "./Button";
 
 const Board = () => {
   const [pressKeys, setPressKeys] = useState<string[]>([]);
-  const setKeys = ({ shiftKey, altKey, ctrlKey, key }: KeyboardEvent) => {
+
+  //if you want to check web, enable below(+unable below code)
+  /*const setKeys = ({ shiftKey, altKey, ctrlKey, key }: KeyboardEvent) => {
     const keys = [];
     if (/^[a-z]$/.test(key)) keys.push(key);
     if (shiftKey) keys.push("shift");
@@ -16,6 +18,23 @@ const Board = () => {
     window.document.addEventListener("keydown", setKeys);
     return () => {
       window.document.removeEventListener("keydown", setKeys);
+    };
+  });*/
+
+  //if you want to check vscode, enable below(+unable upper code)
+  const setKeyPress = (ev: MessageEvent<any>) => {
+    const data = ev.data
+    console.log(data)
+    if('keys' in data){
+      const keys = data["keys"] as string[]
+      setPressKeys(keys)
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("message", setKeyPress);
+    return () => {
+      window.removeEventListener("message", setKeyPress);
     };
   });
 

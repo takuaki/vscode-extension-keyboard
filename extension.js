@@ -17,7 +17,7 @@ function activate(context) {
       vscode.workspace.onDidChangeTextDocument((e) => {
         const key = e.contentChanges[0].text;
         const keys = convertKeys(key);
-        vscode.window.showInformationMessage({ keys: keys });
+        panel.webview.postMessage({ keys: keys });
       });
     }
   );
